@@ -1,3 +1,20 @@
 {
-  "extends": "react-app"
+  "extends": "react-app",
+  "env": {
+    "es6": true,
+    "jest": true,
+    "node": true,
+    "browser": true
+  },
+  "rules": {
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "**/*.test.jsx",
+          "**/*.config.js"
+        ]
+      }
+    ]
+  }
 }
