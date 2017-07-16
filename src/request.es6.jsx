@@ -4,8 +4,8 @@ class Request extends Component {
   constructor(props) {
     super(props);
 
-    const API_KEY = process.env.REACT_APP_API_KEY
-    const URL = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=MSFT&apikey="
+    const API_KEY = process.env.REACT_APP_API_KEY;
+    const URL = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=MSFT&apikey=";
 
       this.state = {
       url: URL + API_KEY,
@@ -19,14 +19,14 @@ class Request extends Component {
 
   getData () {
     fetch(this.state.url).then(r => r.json())
-    .then((data) => {this.updateState(data)})
-    .catch(e => console.log("Error"))
+    .then((data) => {this.updateState(data);})
+    .catch(e => console.log("Error"));
   }
 
   updateState(data) {
   this.setState({
     response: data
-  })
+  });
 }
 
 
